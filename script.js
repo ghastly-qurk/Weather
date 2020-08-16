@@ -1,5 +1,5 @@
 function fetchWeather(zip, api_key) {
-  const resp = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},in&appid=${api_key}`).then((resp) => resp.json()).then(
+  fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},in&appid=${api_key}`).then((resp) => resp.json()).then(
   const div = document.querySelector('div');
   week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   month = ["January", "February", "March", "April", "May", "June", "July", "August", "September" , "October", "November", "December"];
