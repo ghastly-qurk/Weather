@@ -17,6 +17,7 @@ function fetchWeather(zip, api_key) {
 }
 
 function main() {
+  document.querySelector('div').textContent= "sssaas";
    fetchWeather('700055', '4b17c454b99629cb223d1ae103aa7696');
 }
 
