@@ -1,7 +1,6 @@
 function fetchWeather(zip, api_key) {
-  const link = `http://api.openweathermap.org/data/2.5/weather?zip=${zip},in&appid=${api_key}`;
-  document.querySelector('div').textContent = link;
-  fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},in&appid=${api_key}`)
+  const link = 'https://api.openweathermap.org/data/2.5/weather?zip=700055,in&appid=4b17c454b99629cb223d1ae103aa7696';
+  fetch(link)
   .then(resp => resp.json())
   .then(
       weather => {
