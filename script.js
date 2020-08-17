@@ -4,6 +4,7 @@ function fetchWeather(zip, api_key) {
   .then(
       weather => {
           const div = document.querySelector('div');
+        div.textContent = JSON.stringify(weather);
           week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
           month = ["January", "February", "March", "April", "May", "June", "July", "August", "September" , "October", "November", "December"];
           date = new Date();
@@ -17,8 +18,7 @@ function fetchWeather(zip, api_key) {
 }
 
 function main() {
-  document.querySelector('div').innerHTML = `<h1>Ala</h1>`;
-   fetchWeather('700055', '4b17c454b99629cb223d1ae103aa7696');
+fetchWeather('700055', '4b17c454b99629cb223d1ae103aa7696');
 }
 
 main();
