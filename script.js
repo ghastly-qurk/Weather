@@ -1,11 +1,9 @@
 function fetchWeather() {
-  const link = `https://api.openweathermap.org/data/2.5/weather?zip=700055,in&appid=4b17c454b99629cb223d1ae103aa7696`;
-  fetch(link)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?zip=700055,in&appid=4b17c454b99629cb223d1ae103aa7696`)
   .then(resp => resp.json())
   .then(
       weather => {
           const div = document.querySelector('div');
-        div.textContent = JSON.stringify(weather);
           week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
           month = ["January", "February", "March", "April", "May", "June", "July", "August", "September" , "October", "November", "December"];
           date = new Date();
