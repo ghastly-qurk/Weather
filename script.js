@@ -1,5 +1,5 @@
 function fetchWeather() {
-  const link = 'https://api.openweathermap.org/data/2.5/weather?zip=700055,in&appid=4b17c454b99629cb223d1ae103aa7696';
+  const link = `https://api.openweathermap.org/data/2.5/weather?zip=700055,in&appid=4b17c454b99629cb223d1ae103aa7696`;
   fetch(link)
   .then(resp => resp.json())
   .then(
