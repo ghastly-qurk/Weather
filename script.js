@@ -6,17 +6,9 @@ async function fetchWeather() {
   month = ["January", "February", "March", "April", "May", "June", "July", "August", "September" , "October", "November", "December"];
           date = new Date();
           if (date.getHours() > 12) {
-            if (date.getMinutes() < 10) {
-                div.innerHTML = `<h3 id='lesspad'>${weather.name}, ${weather.sys.country}</h3><p class='date' id='lesspad'>${date.getHours() - 12}:0${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p><h2>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2><span><p id="bold">Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p><p>Humidity: ${weather.main.humidity}%</p></span>`;
+                div.innerHTML = `<h3 id='lesspad'>${weather.name}, ${weather.sys.country}</h3><p class='date' id='lesspad'>${date.getHours() - 12}:${('0' * (date.getMinutes() < 10)) + date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p><h2>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2><span><p id="bold">Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p><p>Humidity: ${weather.main.humidity}%</p></span>`;
            } else {
-              div.innerHTML = `<h3 id='lesspad'>${weather.name}, ${weather.sys.country}</h3><p class='date' id='lesspad'>${date.getHours() - 12}:${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p><h2>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2><span><p id="bold">Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p><p>Humidity: ${weather.main.humidity}%</p></span>`;
-}
-           } else {
-               if (date.getMinutes() < 10) {
-                div.innerHTML = `<h3 id='lesspad'>${weather.name}, ${weather.sys.country}</h3><p class='date' id='lesspad'>${date.getHours()}:0${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p><h2>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2><span><p id="bold">Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p><p>Humidity: ${weather.main.humidity}%</p></span>`;
-           } else {
-              div.innerHTML = `<h3 id='lesspad'>${weather.name}, ${weather.sys.country}</h3><p class='date' id='lesspad'>${date.getHours()}:${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p><h2>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2><span><p id="bold">Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p><p>Humidity: ${weather.main.humidity}%</p></span>`;
-}
+               div.innerHTML = `<h3 id='lesspad'>${weather.name}, ${weather.sys.country}</h3><p class='date' id='lesspad'>${date.getHours()}:${('0' * (date.getMinutes() < 10)) + date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p><h2>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2><span><p id="bold">Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p><p>Humidity: ${weather.main.humidity}%</p></span>`;
 }
 }
 
