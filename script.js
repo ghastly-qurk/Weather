@@ -9,7 +9,7 @@ async function fetchWeather() {
         if (date.getMinutes() < 10) {
             document.querySelector(`p.date`).textContent = `${date.getHours() - 12}:0${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
               }
-    if (date.getHours() < 12) {
+    if (date.getHours() <= 12) {
         document.querySelector(`p.date`).textContent = `${date.getHours()}:${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
         if (date.getMinutes() < 10) {
             document.querySelector(`p.date`).textContent = `${date.getHours()}:0${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
