@@ -7,7 +7,7 @@ async function fetchWeather() {
     date = new Date();
     div.innerHTML = `
 <h3 class='mb-0 pb-0'>${weather.name}, ${weather.sys.country}</h3>
-<p class='mt-0 pt-0 mb-0 text-muted'>${date.getHours() - 12}:${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p>
+<p class='mt-0 pt-0 mb-0 text-secondary'>${date.getHours() - 12}:${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p>
 <h1 class='py-4 font-weight-lighter'><span style='filter: invert(100%);'><img src='http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png' height='50' width='50' /></span>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2>
 <span class='font-weight-bold'>
 <p class='mb-0 pb-0'>Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p>
@@ -15,12 +15,12 @@ async function fetchWeather() {
 </span>
 `;
         if (date.getMinutes() < 10) {
-            document.querySelector(`p.text-muted`).textContent = `${date.getHours() - 12}:0${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+            document.querySelector(`p.text-secondary`).textContent = `${date.getHours() - 12}:0${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
               }
     if (date.getHours() <= 12) {
-        document.querySelector(`p.text-muted`).textContent = `${date.getHours()}:${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+        document.querySelector(`p.text-secondary`).textContent = `${date.getHours()}:${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
         if (date.getMinutes() < 10) {
-            document.querySelector(`p.text-muted`).textContent = `${date.getHours()}:0${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+            document.querySelector(`p.text-secondary`).textContent = `${date.getHours()}:0${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
         }
     }
 }
