@@ -8,7 +8,7 @@ async function fetchWeather() {
     div.innerHTML = `
 <h3 class='mb-0 pb-0'>${weather.name}, ${weather.sys.country}</h3>
 <p class='mt-0 pt-0 mb-0 text-muted'>${date.getHours() - 12}:${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p>
-<h1 class='p-4 font-weight-lighter'><img src='http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png' />${+((weather.main.temp - 273.15).toFixed(1))}°C</h2>
+<h1 class='p-4 pl-0 font-weight-lighter'><img src='http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png' />${+((weather.main.temp - 273.15).toFixed(1))}°C</h2>
 <span class='font-weight-bold'>
 <p class='mb-0 pb-0'>Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p>
 <p class='mb-0 pb-0'>Humidity: ${weather.main.humidity}%</p>
