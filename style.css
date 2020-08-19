@@ -4,7 +4,7 @@ body {
 .heading {
   font-family: Roboto, sans-serif;
   display: flex;
-    font-size: 50vw;
+    font-size: 20vw;
   justify-content: center;
   flex-wrap: wrap;
 }
