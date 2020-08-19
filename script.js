@@ -1,7 +1,7 @@
 async function fetchWeather() {
     const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=700055,in&appid=4b17c454b99629cb223d1ae103aa7696`);
     const weather = await resp.json();
-    const div = document.querySelector('div.container');
+    const div = document.querySelector('div#weather');
     week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     month = ["January", "February", "March", "April", "May", "June", "July", "August", "September" , "October", "November", "December"];
     date = new Date();
