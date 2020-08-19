@@ -5,7 +5,7 @@ async function fetchWeather() {
     week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     month = ["January", "February", "March", "April", "May", "June", "July", "August", "September" , "October", "November", "December"];
     date = new Date();
-    div.innerHTML = `<h1 class='display-6'>${weather.name}, ${weather.sys.country}</h1><p class='font-weight-light'>${date.getHours() - 12}:${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p><h2>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2><span><p>Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p><p>Humidity: ${weather.main.humidity}%</p></span>`;
+    div.innerHTML = `<h3>${weather.name}, ${weather.sys.country}</h3><p class='font-weight-light'>${date.getHours() - 12}:${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p><h2>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2><span><p>Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p><p>Humidity: ${weather.main.humidity}%</p></span>`;
         if (date.getMinutes() < 10) {
             document.querySelector(`p.font-weight-light`).textContent = `${date.getHours() - 12}:0${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
               }
