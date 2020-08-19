@@ -7,7 +7,7 @@ async function fetchWeather() {
     date = new Date();
     div.innerHTML = `
 <h3>${weather.name}, ${weather.sys.country}</h3>
-<p class='font-weight-light'>${date.getHours() - 12}:${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p>
+<p class='mb-0 font-weight-light'>${date.getHours() - 12}:${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p>
 <h1 class='p-3 font-weight-light'>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2>
 <span>
 <p>Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p>
