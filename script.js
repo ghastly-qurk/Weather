@@ -6,21 +6,21 @@ async function fetchWeather() {
     month = ["January", "February", "March", "April", "May", "June", "July", "August", "September" , "October", "November", "December"];
     date = new Date();
     div.innerHTML = `
-<h3>${weather.name}, ${weather.sys.country}</h3>
-<p class='mb-0 font-weight-light'>${date.getHours() - 12}:${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p>
-<h1 class='p-4 font-weight-light'>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2>
+<h3 class='mb-0 pb-0'>${weather.name}, ${weather.sys.country}</h3>
+<p class='mt-0 pt-0 mb-0 font-weight-light'>${date.getHours() - 12}:${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p>
+<h1 class='p-4 font-weight-lighter'>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2>
 <span class='font-weight-bold'>
 <p>Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p>
 <p>Humidity: ${weather.main.humidity}%</p>
 </span>
 `;
         if (date.getMinutes() < 10) {
-            document.querySelector(`p.font-weight-light`).textContent = `${date.getHours() - 12}:0${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+            document.querySelector(`p.font-weight-lighter`).textContent = `${date.getHours() - 12}:0${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
               }
     if (date.getHours() <= 12) {
-        document.querySelector(`p.font-weight-light`).textContent = `${date.getHours()}:${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+        document.querySelector(`p.font-weight-lighter`).textContent = `${date.getHours()}:${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
         if (date.getMinutes() < 10) {
-            document.querySelector(`p.font-weight-light`).textContent = `${date.getHours()}:0${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+            document.querySelector(`p.font-weight-lighter`).textContent = `${date.getHours()}:0${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
         }
     }
 }
