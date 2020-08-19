@@ -10,8 +10,8 @@ async function fetchWeather() {
 <p class='mt-0 pt-0 mb-0 text-muted'>${date.getHours() - 12}:${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p>
 <h1 class='p-4 font-weight-lighter'>${+((weather.main.temp - 273.15).toFixed(1))}°C</h2>
 <span class='font-weight-bold'>
-<p>Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p>
-<p>Humidity: ${weather.main.humidity}%</p>
+<p class='mb-0 pb-0'>Feels like ${+((weather.main.feels_like - 273.15).toFixed(1))}°C. ${weather.weather[0].main}. ${weather.weather[0].description[0].toUpperCase() + weather.weather[0].description.substring(1)}</p>
+<p class='mb-0 pb-0'>Humidity: ${weather.main.humidity}%</p>
 </span>
 `;
         if (date.getMinutes() < 10) {
