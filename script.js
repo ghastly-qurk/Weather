@@ -1,6 +1,9 @@
 async function fetchWeather() {
-    const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=700055,in&appid=4b17c454b99629cb223d1ae103aa7696`);
-    const weather = await resp.json();
+    return await (await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=700055,in&appid=4b17c454b99629cb223d1ae103aa7696`)).json();
+}
+
+function main() {
+	const weather = fetchWeather();
     const div = document.querySelector('div#weather');
     week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     month = ["January", "February", "March", "April", "May", "June", "July", "August", "September" , "October", "November", "December"];
@@ -23,10 +26,6 @@ async function fetchWeather() {
             document.querySelector(`p.text-secondary`).textContent = `${date.getHours()}:0${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
         }
     }
-}
-
-function main() {
-    fetchWeather();
 }
 
 main();
