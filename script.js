@@ -5,7 +5,7 @@ async function getWeather() {
 }
 
 async function weatherJSON() {
-	return await (await getWeather()).json();
+	return (await getWeather()).json();
 }
 
 async function main() {
