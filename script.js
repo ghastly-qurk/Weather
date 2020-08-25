@@ -1,15 +1,14 @@
 'use strict';
 
-async function getWeather() {
+async function fetchWeather() {
 	return fetch(`https://api.openweathermap.org/data/2.5/weather?zip=700055,in&appid=4b17c454b99629cb223d1ae103aa7696`);
 }
 
 async function weatherJSON() {
-	return (await getWeather()).json();
+	return (await fetchWeather()).json();
 }
 
 async function main() {
-
 	const weather = await weatherJSON();
 
 	const div = document.querySelector(`div#weather`);
@@ -28,19 +27,17 @@ async function main() {
 </span>
 `;
 
-	if (date.getMinutes() < 10) {
-		document.querySelector(`p.text-secondary`).textContent = `${date.getHours() - 12}:0${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-	}
-
 	if (date.getHours() <= 12) {
 		document.querySelector(`p.text-secondary`).textContent = `${date.getHours()}:${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 
 		if (date.getMinutes() < 10) {
 			document.querySelector(`p.text-secondary`).textContent = `${date.getHours()}:0${date.getMinutes()} AM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 		}
-
+	} else {
+		if (date.getMinutes() < 10) {
+			document.querySelector(`p.text-secondary`).textContent = `${date.getHours() - 12}:0${date.getMinutes()} PM, ${week[date.getDay()]}, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+		}
 	}
-
 }
 
 main();
