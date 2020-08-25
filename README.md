@@ -1,5 +1,2 @@
-## Weather
-
-# aaaaaa
-###@'@ a. a a a a
-Weather App
+# Weather
+Weather App made using HTML, Bootstrap and JavaScript with the OpenWeatherMap Weather API.
