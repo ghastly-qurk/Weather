@@ -1,14 +1,16 @@
 'use strict';
 
-async function fetchWeather() {
+async function getWeather() {
+	return await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=700055,in&appid=4b17c454b99629cb223d1ae103aa7696`);
+}
 
-	return await (await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=700055,in&appid=4b17c454b99629cb223d1ae103aa7696`)).json();
-
+async function weatherJSON() {
+	return await getWeather().json();
 }
 
 async function main() {
 
-	const weather = await fetchWeather();
+	const weather = await weatherJSON();
 
 	const div = document.querySelector(`div#weather`);
 	
