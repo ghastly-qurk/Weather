@@ -67,3 +67,7 @@ body {
 .text-secondary {
   color: #6c757d;
 }
+
+.center-y {
+  align-items: center;
+}
