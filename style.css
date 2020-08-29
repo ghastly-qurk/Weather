@@ -63,3 +63,7 @@ body {
   padding-top: 3;
   padding-bottom: 3;
 }
+
+.text-secondary {
+  color: #6c757d;
+}
