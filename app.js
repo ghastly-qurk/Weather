@@ -47,7 +47,7 @@ async function main() {
   }:${date.getMinutes()} PM, ${week[date.getDay()]}, ${
     month[date.getMonth()]
   } ${date.getDate()}, ${date.getFullYear()}</p>
-<div>
+<div class='flex container'>
 <img src='http://openweathermap.org/img/wn/${
     weather.weather[0].icon
   }@2x.png' height='50' width='50' />
