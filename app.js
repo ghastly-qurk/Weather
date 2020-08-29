@@ -47,12 +47,12 @@ async function main() {
   }:${date.getMinutes()} PM, ${week[date.getDay()]}, ${
     month[date.getMonth()]
   } ${date.getDate()}, ${date.getFullYear()}</p>
-<h3 class='my-3 py-3 display-3 font-weight-lighter'><img src='http://openweathermap.org/img/wn/${
+<h1 class='my-3 py-3 light'><img src='http://openweathermap.org/img/wn/${
     weather.weather[0].icon
   }@2x.png' height='50' width='50' />${+(weather.main.temp - 273.15).toFixed(
     1
-  )}°C</h3>
-<span class='font-weight-bold'>
+  )}°C</h1>
+<div class='bold'>
 <p class='my-0 py-0'>Feels like ${+(weather.main.feels_like - 273.15).toFixed(
     1
   )}°C. ${weather.weather[0].main}. ${
@@ -60,7 +60,7 @@ async function main() {
     weather.weather[0].description.substring(1)
   }</p>
 <p class='my-0 py-0'>Humidity: ${weather.main.humidity}%</p>
-</span>
+</div>
 `;
 
   if (date.getHours() <= 12) {
