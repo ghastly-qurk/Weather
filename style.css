@@ -12,6 +12,10 @@ body {
   display: flex;
 }
 
+.inline-flex {
+  display: inline-flex;
+}
+
 .center {
   justify-content: center;
 }
