@@ -73,5 +73,9 @@ body {
 }
 
 .center-y {
-  align-items: baseline;
+  align-items: center;
+}
+
+input#feedback {
+  border-radius: 1em;
 }
