@@ -80,6 +80,7 @@ form {
   display: flexbox;
 }
 button {
+  border: none;
   background-color: #11F;
   color: #FFF;
 }
