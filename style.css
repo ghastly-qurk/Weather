@@ -80,6 +80,11 @@ form {
   display: flexbox;
 }
 button {
-  background-color: #0000FF;
-  color: white;
+  background-color: #11F;
+  color: #FFF;
+}
+
+button:after {
+  background-color: #44F;
+  color: #CCC;
 }
