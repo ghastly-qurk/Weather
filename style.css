@@ -77,7 +77,7 @@ body {
 }
 
 form {
-  display: flexbox;
+  display: flex;
 }
 button {
   border: none;
