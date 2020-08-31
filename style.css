@@ -79,3 +79,7 @@ body {
 form {
   display: flexbox;
 }
+input.submit {
+  background-color: #0000FF;
+  color: white;
+}
