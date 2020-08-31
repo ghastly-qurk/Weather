@@ -76,6 +76,6 @@ body {
   align-items: center;
 }
 
-input#feedback {
-  border-radius: 1em;
+form {
+  display: flexbox;
 }
