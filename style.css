@@ -79,7 +79,7 @@ body {
 form {
   display: flexbox;
 }
-input.submit {
+button {
   background-color: #0000FF;
   color: white;
 }
