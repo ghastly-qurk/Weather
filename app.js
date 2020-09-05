@@ -1,4 +1,4 @@
-"use strict";
+`use strict`;
 
 async function fetchWeather() {
   return fetch(
@@ -12,31 +12,31 @@ async function weatherJSON() {
 
 async function main() {
   const weather = await weatherJSON();
-  const div = document.querySelector("div#weather");
+  const div = document.querySelector(`div#weather`);
 
   const date = new Date();
   const week = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
+    `Sunday`,
+    `Monday`,
+    `Tuesday`,
+    `Wednesday`,
+    `Thursday`,
+    `Friday`,
+    `Saturday`
   ];
   const month = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+    `January`,
+    `February`,
+    `March`,
+    `April`,
+    `May`,
+    `June`,
+    `July`,
+    `August`,
+    `September`,
+    `October`,
+    `November`,
+    `December`
   ];
 
   div.innerHTML =
@@ -63,21 +63,21 @@ async function main() {
 
   if (date.getHours() <= 12) {
     document.querySelector(
-      "p.text-secondary"
+      `p.text-secondary`
     ).textContent = `${date.getHours()}:${date.getMinutes()} AM, ${
       week[date.getDay()]
     }, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 
     if (date.getMinutes() < 10) {
       document.querySelector(
-        "p.text-secondary"
+        `p.text-secondary`
       ).textContent = `${date.getHours()}:0${date.getMinutes()} AM, ${
         week[date.getDay()]
       }, ${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
     }
   } else {
     if (date.getMinutes() < 10) {
-      document.querySelector("p.text-secondary").textContent = `${
+      document.querySelector(`p.text-secondary`).textContent = `${
         date.getHours() - 12
       }:0${date.getMinutes()} PM, ${week[date.getDay()]}, ${
         month[date.getMonth()]
